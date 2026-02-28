@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav Chabi Workshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2d50ed;
+            --whatsapp: #25D366;
+            --insta: #E1306C;
+            --yt: #FF0000;
+            --google: #4285F4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #f4f7f6; overflow-x: hidden; }
+
+        /* --- 1. WELCOME SCREEN (PRELOADER) --- */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        #preloader video {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 20px;
+        }
+
+        /* --- 2. MARQUEE --- */
+        .marquee {
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 8px 0;
+            position: fixed;
+            top: 0; z-index: 100;
+            font-size: 12px;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        .marquee-inner {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 15s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* --- 3. MAIN CARD --- */
+        .main-container {
+            width: 90%;
+            max-width: 420px;
+            background: #fff;
+            margin: 70px auto 120px;
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .workshop-logo {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Image Slider */
+        .slider {
+            width: 100%; height: 210px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+        .slides {
+            display: flex; width: 300%; height: 100%;
+            transition: 0.8s ease-in-out;
+        }
+        .slides img { width: 33.33%; object-fit: cover; }
+
+        /* Links & Buttons */
+        .btn-catalogue {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            display: block;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-row {
+            display: flex; align-items: center;
+            background: #f9f9f9;
+            padding: 15px; margin-bottom: 10px;
+            border-radius: 15px;
+            text-decoration: none; color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .social-row:hover { transform: translateY(-2px); border-color: var(--primary); }
+        .social-row i { font-size: 22px; width: 40px; }
+        .arrow { margin-left: auto; font-size: 12px; color: #bbb; }
+
+        .save-btn {
+            background: #222; color: #fff; border: none;
+            width: 100%; padding: 15px; border-radius: 15px;
+            font-weight: 600; cursor: pointer; margin-top: 10px;
+        }
+
+        /* --- 4. STACKED FLOATING BUTTONS (UPER NICHE) --- */
+        .floating-stack {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            display: flex;
+            flex-direction: column; /* Stacked Vertically */
+            gap: 12px;
+            z-index: 1000;
+        }
+        .float-btn {
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 26px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        .f-call { background: var(--primary); }
+        .f-wa { background: var(--whatsapp); animation-delay: 0.5s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dlvd5j1mu/video/upload/v1770994844/ezgif.com-video-to-gif-converter_x06kez.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="marquee">
+        <div class="marquee-inner">
+            Vehicle Key Programming | Smart Key Repair | Remote Solutions | Professional Service | Original Key Quality | Instant Solutions
+        </div>
+    </div>
+
+    <div class="main-container">
+        <img src="https://i.ibb.co/fzjSGKf0/logo.jpg" class="workshop-logo" alt="Keshav Logo">
+        <h2 style="font-size: 22px;">Keshav Chabi Workshop</h2>
+        <p style="color: #666; font-size: 14px;">Professional Vehicle Key Maker</p>
+
+        <div class="slider">
+            <div class="slides" id="slideTrack">
+                <img src="https://uploads.onecompiler.io/42yz72g4r/44cz7tz3k/1000311915.jpg">
+                <img src="https://uploads.onecompiler.io/42yz72g4r/44cz7tz3k/1000311926.jpg">
+                <img src="https://uploads.onecompiler.io/42yz72g4r/44cz7tz3k/1000311927.jpg">
+            </div>
+        </div>
+
+        <a href="https://wa.me/c/916268861262" class="btn-catalogue">View WhatsApp Catalogue</a>
+
+        <p style="font-size: 12px; color: #888; margin-bottom: 20px;">
+            TV tower ke pass tahsil office road bairagpara Pandriya kabirdham 491559 chhattisgarh
+        </p>
+
+        <a href="https://www.instagram.com/keshav_chabiworkshop" class="social-row">
+            <i class="fa-brands fa-instagram" style="color: var(--insta);"></i> Instagram <span class="arrow">▶</span>
+        </a>
+        <a href="https://www.youtube.com/@keshavchabiworkshop" class="social-row">
+            <i class="fa-brands fa-youtube" style="color: var(--yt);"></i> YouTube <span class="arrow">▶</span>
+        </a>
+        <a href="https://g.page/r/CcdYMsU52BbZEBE/review" class="social-row">
+            <i class="fa-brands fa-google" style="color: var(--google);"></i> Google Review <span class="arrow">▶</span>
+        </a>
+        <a href="https://www.google.com/maps/search/Keshav+Chabi+Workshop+Pandriya+Chhattisgarh" class="social-row">
+            <i class="fa-solid fa-location-dot" style="color: #EA4335;"></i> Shop Location <span class="arrow">▶</span>
+        </a>
+
+        <button class="save-btn" onclick="downloadVCF()">
+            <i class="fa-solid fa-user-plus"></i> Save Contact to Phone
+        </button>
+
+        <p style="margin-top: 20px; font-size: 10px; color: #bbb;">© 2026 Keshavchabiworkshop</p>
+    </div>
+
+    <div class="floating-stack">
+        <a href="tel:+919893216520" class="float-btn f-call"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://wa.me/919893216520" class="float-btn f-wa"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        // Preloader Hide
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loader = document.getElementById('preloader');
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 2000); // Shows video for 2 seconds
+        });
+
+        // Auto Slider
+        let current = 0;
+        const track = document.getElementById('slideTrack');
+        setInterval(() => {
+            current = (current + 1) % 3;
+            track.style.transform = `translateX(-${current * 33.33}%)`;
+        }, 3000);
+
+        // VCF Contact Downloader
+        function downloadVCF() {
+            const vCardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "FN:Keshav Chabi Workshop",
+                "TEL;TYPE=CELL:+919893216520",
+                "ADR;TYPE=WORK:;;TV tower road bairagpara;Pandriya;Chhattisgarh;491559;India",
+                "TITLE:Vehicle Key Expert",
+                "END:VCARD"
+            ].join("\n");
+
+            const blob = new Blob([vCardData], { type: "text/vcard" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Keshav_Chabi_Workshop.vcf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
